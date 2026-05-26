@@ -5,10 +5,12 @@ import main.java.org.example.NodoBST;
 public class Cola {
     private NodoCola frente;
     private NodoCola ultimo;
+    private int tamanio;
 
     public Cola() {
         this.frente = null;
         this.ultimo = null;
+        tamanio = 0;
     }
 
     public boolean isEmpty() {
@@ -26,6 +28,7 @@ public class Cola {
             ultimo.setSiguiente(nuevo);
         }
         ultimo = nuevo;
+        tamanio++;
     }
 
     public NodoBST dequeue() {
@@ -37,6 +40,7 @@ public class Cola {
         if (frente == null) {
             ultimo = null;
         }
+        tamanio--;
         return data;
     }
 
@@ -59,5 +63,9 @@ public class Cola {
             actual = actual.getSiguiente();
         }
         System.out.println();
+    }
+
+    public int getTamanio() {
+        return tamanio;
     }
 }
