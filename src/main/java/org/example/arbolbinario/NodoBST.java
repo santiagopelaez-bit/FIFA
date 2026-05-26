@@ -1,4 +1,4 @@
-package main.java.org.example;
+package org.example.arbolbinario;
 
 public class NodoBST {
     private Seleccion cell;

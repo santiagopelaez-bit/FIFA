@@ -1,11 +1,12 @@
-package main.java.org.example.Colas;
+package org.example.Colas;
 
-import main.java.org.example.NodoBST;
+
+import org.example.arbolbinario.NodoBST;
 
 public class Cola {
-    private NodoCola frente;
-    private NodoCola ultimo;
-    private int tamanio;
+    public NodoCola frente;
+    public NodoCola ultimo;
+    public int tamanio;
 
     public Cola() {
         this.frente = null;

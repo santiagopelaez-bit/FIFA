@@ -1,4 +1,6 @@
-package main.java.org.example;
+package org.example.arbolbinario;
+
+
 
 public class ArbolBinarioBusqueda {
     private NodoBST raiz;
@@ -28,6 +30,7 @@ public class ArbolBinarioBusqueda {
     public NodoBST insert(NodoBST nodo, Seleccion cell) {
         if (nodo == null) return new NodoBST(cell);
         if (cell.getRanking() < nodo.getCell().getRanking()) nodo.setIzquierda(insert(nodo.getIzquierda(), cell));
+        else if (cell.getRanking() == nodo.getCell().getRanking()) System.out.println("Ya existe una seleccion con este ranking");
         else if (cell.getRanking() > nodo.getCell().getRanking()) nodo.setDerecho(insert(nodo.getDerecho(), cell));
         return nodo;
     }
@@ -56,7 +59,7 @@ public class ArbolBinarioBusqueda {
         if (ranking < nodo.getCell().getRanking()) nodo.setIzquierda(delete(nodo.getIzquierda(), ranking));
         else if (ranking > nodo.getCell().getRanking()) nodo.setDerecho(delete(nodo.getDerecho(), ranking));
         else {
-            if (nodo.getIzquierda() == null & nodo.getDerecho() == null) return null;
+            if (nodo.getIzquierda() == null && nodo.getDerecho() == null) return null;
             if (nodo.getIzquierda() == null) return nodo.getDerecho();
             if (nodo.getDerecho() == null) return nodo.getIzquierda();
             NodoBST sucesor = minim(nodo.getDerecho());

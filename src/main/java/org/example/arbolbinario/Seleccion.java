@@ -1,4 +1,4 @@
-package main.java.org.example;
+package org.example.arbolbinario;
 
 public class Seleccion {
     private int Ranking;
@@ -72,5 +72,16 @@ public class Seleccion {
         System.out.println("Goles a favor: " + GolesAF);
         System.out.println("Goles en contra: " + GolesEC);
         System.out.println("Puntos: " + puntos);
+    }
+
+    // Método para que realmente se nos muestre info de la selección
+    @Override
+    public String toString() {
+        return "Ranking: " + Ranking +
+                ", Nombre: " + Nombre +
+                ", Grupo: " + Grupo +
+                ", Goles a favor: " + GolesAF +
+                ", Goles en contra: " + GolesEC +
+                ", Puntos: " + puntos;
     }
 }
