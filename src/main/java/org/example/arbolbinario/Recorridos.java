@@ -1,7 +1,7 @@
-package org.example.arbolbinario;
+package main.java.org.example.arbolbinario;
 
 
-import org.example.Colas.Cola;
+import main.java.org.example.arbolbinario.Colas.Cola;
 
 public class Recorridos {
 

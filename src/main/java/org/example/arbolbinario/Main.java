@@ -1,9 +1,9 @@
-package org.example.arbolbinario;
+package main.java.org.example.arbolbinario;
 
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ArbolBinarioBusqueda bst = new ArbolBinarioBusqueda();
         Recorridos recorridos = new Recorridos();
@@ -42,27 +42,26 @@ public class Main {
         bst.InsertarSel(can); //30
         bst.InsertarSel(mex); //15
 
-
-        System.out.println("------------Menú árbol mundial fuchibol------------");
-        System.out.println("1. Mostrar reporte ordenado por ranking FIFA");
-        System.out.println("2. Mostrar vista estructural por niveles");
-        System.out.println("3. Buscar selección por ranking fifa");
-        System.out.println("4. Borrar selección por ranking FIFA");
-        System.out.println("5. Mostrar favorito a ganar el mundial");
-        System.out.println("6. Mostrar menos favorito a ganar el mundial");
-        System.out.println("7. Mostrar diferencia total de goles");
-        System.out.println("8. Mostrar cantidad de selecciones en el mundial");
-        System.out.println("9. Mostrar altura del árbol");
-        System.out.println("10. Preorder");
-        System.out.println("11. Postorder");
-        System.out.println("0. Salir de árbol mundial fuchibol");
-        System.out.println("Elige una opción: ");
-
-        int opcion;
-        do{
+        int opcion = -1;
+        do {
+            System.out.println("------------Menú árbol mundial fuchibol------------");
+            System.out.println("1. Mostrar reporte ordenado por ranking FIFA");
+            System.out.println("2. Mostrar vista estructural por niveles");
+            System.out.println("3. Agregar selección por ranking FIFA");
+            System.out.println("4. Buscar selección por ranking fifa");
+            System.out.println("5. Borrar selección por ranking FIFA");
+            System.out.println("6. Mostrar favorito a ganar el mundial");
+            System.out.println("7. Mostrar menos favorito a ganar el mundial");
+            System.out.println("8. Mostrar diferencia total de goles");
+            System.out.println("9. Mostrar cantidad de selecciones en el mundial");
+            System.out.println("10. Mostrar altura del árbol");
+            System.out.println("11. Preorder");
+            System.out.println("12. Postorder");
+            System.out.println("0. Salir de árbol mundial fuchibol");
+            System.out.println("Elige una opción: ");
             opcion = sc.nextInt();
 
-            switch (opcion){
+            switch (opcion) {
                 case 1:
                     recorridos.reporteOrdenado(bst.getRaiz());
                     break;
@@ -72,6 +71,26 @@ public class Main {
                     break;
 
                 case 3:
+                    System.out.println("Ingrese el ranking FIFA de la nueva selección: ");
+                    int rank = sc.nextInt();
+                    sc.nextLine();
+                    System.out.println("Ingrese el nombre de la nueva selección: ");
+                    String sel = sc.nextLine();
+                    System.out.println("Ingrese el grupo(A-L): ");
+                    String gr = sc.nextLine();
+                    System.out.println("Ingrese los Goles a favor: ");
+                    int gaf = sc.nextInt();
+                    System.out.println("Ingrese los Goles en contra: ");
+                    int gec = sc.nextInt();
+                    System.out.println("Ingrese los puntos de la selección nueva: ");
+                    int poi = sc.nextInt();
+                    sc.nextLine();
+                    Seleccion seleccion = new Seleccion(rank, sel, gr, gaf, gec, poi);
+                    bst.InsertarSel(seleccion);
+                    System.out.println("Selección agregada correctamente");
+                    break;
+
+                case 4:
                     System.out.println("Ingrese el ranking FIFA de la seleccion a buscar");
 
                     int rankingBuscar = sc.nextInt();
@@ -85,7 +104,7 @@ public class Main {
                     }
                     break;
 
-                case 4:
+                case 5:
                     System.out.print("Ingrese el ranking a borrar: ");
                     int rankingBorrar = sc.nextInt();
 
@@ -93,32 +112,32 @@ public class Main {
                     System.out.println("Operacion de borrado finalizada.");
                     break;
 
-                case 5:
+                case 6:
                     recorridos.favorito(bst.getRaiz());
                     break;
 
-                case 6:
+                case 7:
                     recorridos.weakest(bst.getRaiz());
                     break;
 
-                case 7:
+                case 8:
                     recorridos.diferenciaTG(bst.getRaiz());
                     break;
 
-                case 8:
+                case 9:
                     System.out.println("Cantidad de selecciones: " + bst.CellMax());
                     break;
 
-                case 9:
+                case 10:
                     System.out.println("Altura del arbol: " + bst.Altura());
                     break;
 
-                case 10:
+                case 11:
                     System.out.println("Recorrido preOrder:");
                     recorridos.preOrder(bst.getRaiz());
                     break;
 
-                case 11:
+                case 12:
                     System.out.println("Recorrido postOrder:");
                     recorridos.postOrder(bst.getRaiz());
                     break;
@@ -136,7 +155,7 @@ public class Main {
             System.out.println("//////////////////////////////////");
             System.out.println("//////////////////////////////////");
             System.out.println("//////////////////////////////////");
-        }while (opcion != 0);
+        } while (opcion != 0);
 
         sc.close();
     }

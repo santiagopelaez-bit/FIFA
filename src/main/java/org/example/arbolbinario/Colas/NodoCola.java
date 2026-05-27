@@ -1,7 +1,7 @@
-package org.example.Colas;
+package main.java.org.example.arbolbinario.Colas;
 
 
-import org.example.arbolbinario.NodoBST;
+import main.java.org.example.arbolbinario.NodoBST;
 
 public class NodoCola {
     public NodoBST nodo;

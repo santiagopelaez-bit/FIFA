@@ -1,4 +1,4 @@
-package org.example.arbolbinario;
+package main.java.org.example.arbolbinario;
 
 public class Seleccion {
     private int Ranking;
@@ -65,7 +65,7 @@ public class Seleccion {
         this.puntos = puntos;
     }
 
-    public void mostrar(){
+    public void mostrar() {
         System.out.println("Ranking: " + Ranking);
         System.out.println("Nombre: " + Nombre);
         System.out.println("Grupo: " + Grupo);
