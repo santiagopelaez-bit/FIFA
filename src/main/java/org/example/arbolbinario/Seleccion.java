@@ -74,7 +74,7 @@ public class Seleccion {
         System.out.println("Puntos: " + puntos);
     }
 
-    // Método para que realmente se nos muestre info de la selección
+    // Metodo para que realmente se nos muestre info de la selección
     @Override
     public String toString() {
         return "Ranking: " + Ranking +
